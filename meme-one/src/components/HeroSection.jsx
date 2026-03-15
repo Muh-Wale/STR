@@ -1,5 +1,15 @@
 import { motion } from 'motion/react'
 
+function scrollTo(id) {
+  const el = document.getElementById(id)
+  if (!el) return
+  if (window.__lenis) {
+    window.__lenis.scrollTo(el, { offset: 0 })
+  } else {
+    el.scrollIntoView({ behavior: 'smooth' })
+  }
+}
+
 export function HeroSection() {
   const MotionSection = motion.section
   const MotionDiv = motion.div
@@ -20,18 +30,10 @@ export function HeroSection() {
           <span>.fun</span>
         </div>
         <nav className="flex gap-9 text-[0.95rem] font-bold max-[980px]:hidden">
-          <a href="#about" className="no-underline">
-            About
-          </a>
-          <a href="#features" className="no-underline">
-            Features
-          </a>
-          <a href="#join" className="no-underline">
-            How to Join
-          </a>
-          <a href="#roadmap" className="no-underline">
-            Roadmap
-          </a>
+          <button onClick={() => scrollTo('about')} className="cursor-pointer bg-transparent border-none p-0 font-bold text-[0.95rem]">About</button>
+          <button onClick={() => scrollTo('features')} className="cursor-pointer bg-transparent border-none p-0 font-bold text-[0.95rem]">Features</button>
+          <button onClick={() => scrollTo('join')} className="cursor-pointer bg-transparent border-none p-0 font-bold text-[0.95rem]">How to Join</button>
+          <button onClick={() => scrollTo('roadmap')} className="cursor-pointer bg-transparent border-none p-0 font-bold text-[0.95rem]">Roadmap</button>
         </nav>
       </header>
 

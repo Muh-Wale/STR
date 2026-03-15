@@ -16,6 +16,8 @@ function App() {
       touchMultiplier: 1.2,
     })
 
+    window.__lenis = lenis
+
     let frameId = 0
 
     const raf = (time) => {
@@ -28,6 +30,7 @@ function App() {
     return () => {
       cancelAnimationFrame(frameId)
       lenis.destroy()
+      delete window.__lenis
     }
   }, [])
 
