@@ -69,7 +69,7 @@ export function HowToJoinSection() {
             />
 
             {/* STEP title — sits over the folder tab area */}
-            <h3 className="relative z-10 flex pl-4 pt-[0.55rem] text-[clamp(1rem,2vw,1.45rem)] font-black leading-none">
+            <h3 className="relative z-10 flex pl-4 pt-[0.55rem] text-[24px] font-black leading-none">
               {step.title}
             </h3>
 

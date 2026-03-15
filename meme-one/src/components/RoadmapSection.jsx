@@ -76,7 +76,7 @@ export function RoadmapSection() {
         <MotionImg
           src="/slothsix.png"
           alt="Dancing sloth mascot"
-          className="mt-[1.1rem] ml-48 w-[clamp(5rem,8.7vw,7.3rem)] max-[980px]:ml-0 max-[980px]:mt-4 relative left-52"
+          className="mt-[1.1rem] ml-48 w-[clamp(5rem,8.7vw,7.3rem)] max-[980px]:ml-0 max-[980px]:mt-4 relative left-0 md:left-52"
           animate={{ rotate: [0, 3, -2, 0], y: [0, -5, 0] }}
           transition={{ duration: 2.8, repeat: Infinity, ease: 'easeInOut' }}
         />
@@ -91,17 +91,17 @@ export function RoadmapSection() {
             style={{ scaleY: poleScale }}
           />
         </div>
-        <div className="relative z-50 grid gap-[2rem] py-[2.2rem] items-center my-20">
+        <div className="relative z-50 grid gap-[2rem] py-[2.2rem] items-center my-20 max-[980px]:gap-[1.2rem] max-[980px]:my-10 max-[480px]:gap-[0.9rem] max-[480px]:my-6">
           {phases.map((phase, index) => (
             <MotionDiv
               key={phase.title}
-              className="relative h-[205px] w-[500px] overflow-hidden border-[3px] border-[#111111] shadow-[5px_5px_0_#00000020] max-[980px]:h-[188px]"
+              className="relative h-[205px] w-full max-w-[500px] overflow-hidden border-[3px] border-[#111111] shadow-[5px_5px_0_#00000020] max-[980px]:h-[160px] max-[480px]:h-[120px]"
               style={cardStyles[index]}
             >
               <img src={phase.image} alt="" className="absolute inset-0 h-full w-full object-cover" aria-hidden />
-              <div className="relative z-10 px-4 flex flex-col justify-center h-full max-[980px]:px-[0.55rem] max-[980px]:pt-[0.65rem] max-[980px]:pb-[0.7rem] max-[980px]:pl-[84px]">
-                <h3 className="m-0 text-[48px] leading-none font-bold max-[980px]:text-[34px]">{phase.title}</h3>
-                <p className="mt-[0.5rem] text-[24px] leading-[1.2] font-semibold max-[980px]:text-[18px]">
+              <div className="relative z-10 px-4 flex flex-col justify-center h-full max-[980px]:pl-[84px] max-[480px]:pl-[70px] max-[480px]:px-3">
+                <h3 className="m-0 text-[48px] leading-none font-bold max-[980px]:text-[28px] max-[480px]:text-[20px]">{phase.title}</h3>
+                <p className="mt-[0.5rem] text-[24px] leading-[1.2] font-semibold max-[980px]:text-[15px] max-[480px]:text-[12px] max-[480px]:mt-1">
                   {phase.copy}
                 </p>
               </div>
